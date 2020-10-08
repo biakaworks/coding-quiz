@@ -1,0 +1,3 @@
+$( "#start-quiz").click(function() {
+    $()
+})
