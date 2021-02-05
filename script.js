@@ -1,18 +1,37 @@
 
 //1. do the cards play the game
 //2. add timer (stop count, wrongans, start)
+var timerLeft = 100;
+var time;
+var questionNumber = 0;
 //3. ls (score = time is left) & username
 //score all the ques, ans, choices
-var index=0;
-var game={
-    question:["The Sky is..", "Question2","question3"],
-    choices:[
-        ["green", "blue","purple"],
-        ["1","2","3"],
-        ['a','b','c']
-    ],
-    answer:["blue","2","c"]
-}
+var quizScore = 0;
+var indexQuestion=0;
+var currentQuestion = questions[indexQuestion];
+
+var questions =[{
+    question: "Inside which HTML element do we put the JavaScript?",
+    choices: ["js", "javascript", "scripting", "script"],
+    answer: "script"
+},
+{
+    question: "Where is the correct place to insert a JavaScript?",
+    choices: ["Both the <head> section and the <body> section are correct", "The <head> section", "The <body> section", "The <butt> section"],
+    answer: "Both the <head> section and the <body> section are correct"
+},
+{
+    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    choices: ["<script src='xxx.js'>  ", "<script name='xxx.js'>", "<script href='xxx.js'>", "None of the Above"],
+    answer: "<script src='xxx.js'>  "
+},
+{
+    question: "Inside which HTML element do we put the JavaScript?",
+    choices: ["js", "javascript", "scripting", "script"],
+    answer: "script"
+},
+];
+
 function renderCard(){
     //clear the area blank canvas
     //dynamically append the data to the page
@@ -33,7 +52,12 @@ console.log(game.answer[index])
 
 }
 
-
+function quizTimer() {
+    time = setInterval(function(){
+        timerLeft--;
+        
+    })
+}
 
 $( "#start-quiz").click(function() {
     renderCard();
