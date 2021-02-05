@@ -1,13 +1,23 @@
 // var timerLeft = 100;
 // var time;
 // var questionNumber = 0;
-var welcomeMessage = document.querySelector("#welcomeMessge");
-var startQuiz = document.querySelector("#startQuiz");
-var headerMain = document.querySelector("#headerMain");
-
 var quizScore = 0;
 var indexQuestion = 0;
 var currentQuestion = questions[indexQuestion];
+
+var welcomeMessage = document.querySelector("#welcomeMessge");
+
+var startQuiz = document.querySelector("#startQuiz");
+var headerMain = document.querySelector("#headerMain");
+var timeLeft = 100;
+
+function welcome() {
+    welcomeMessage.textContent = "Test your Javascript Skill! Click Beging Quiz!";}
+    renderWelcome()
+
+function headerTitle() {
+    headerTitle.textContent =" Code Quiz";}
+    headerTitle()
 
 var questions = [
   {
@@ -47,13 +57,6 @@ var questions = [
     answer: "onclick",
   },
 ];
-function welcome() {
-    welcomeMessage.textContent = "Test your Javascript Skill! Click Beging Quiz!";}
-    renderWelcome()
-
-function headerTitle() {
-    headerTitle.textContent =" Code Quiz";}
-    headerTitle()
 
 function headerTitle() {
     headerTitle.textContent =" Code Quiz";
