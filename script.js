@@ -2,14 +2,31 @@
 // var time;
 // var questionNumber = 0;
 var quizScore = 0;
-var indexQuestion = 0;
+var indexContent = 0;
 var currentQuestion = questions[indexQuestion];
 
 var welcomeMessage = document.querySelector("#welcomeMessge");
 
 var startQuiz = document.querySelector("#startQuiz");
+var timer = document.querySelector(".timer");
 var headerMain = document.querySelector("#headerMain");
 var timeLeft = 100;
+
+startQuiz.addEventListener("click", function setTimer() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timer.textContent = "Timer Left for Quiz" + secondsLeft;
+        clearWelcome();
+
+    if(secondsLeft === 0) {
+        clearTimeout(timerInterval);
+        sendGameover();    
+    }
+    else {
+        renderJSQuiz
+    }
+    }, 1000)
+})
 
 function welcome() {
     welcomeMessage.textContent = "Test your Javascript Skill! Click Beging Quiz!";}
@@ -58,25 +75,40 @@ var questions = [
   },
 ];
 
-function headerTitle() {
-    headerTitle.textContent =" Code Quiz";
-  //clear the area blank canvas
-  //dynamically append the data to the page
-  console.log(game.question[index]);
-  //dynamically append btns
-  var btn1 = document.createElement("button");
-  console.log(game.choices[index][0]);
-  console.log(game.choices[index][1]);
-  console.log(game.choices[index][2]);
-  console.log(game.answer[index]);
+function renderJSQuiz() {
+    var displayQuestion = document.querySelector()
+    var questionButton = document.querySelector()
+    var questionTitle = document.querySelector("#question-head")
 
-  //when user onclick a btn
-  //check the user's data against the current answer
-  //if correct
-  //go to the next card ()index++;
-  //check to see if there are more cards if there are more card renderCard()
-  //then call render card
+    display.innerHTML = " ";
+    questionButton.innerHTML =" ";
+
+    for (var i=0; questions.length; i++) {
+        var jsQuestions = questions[indexContent]
+
+    }
+
 }
+
+// function headerTitle() {
+//     headerTitle.textContent =" Code Quiz";
+//   //clear the area blank canvas
+//   //dynamically append the data to the page
+//   console.log(game.question[index]);
+//   //dynamically append btns
+//   var btn1 = document.createElement("button");
+//   console.log(game.choices[index][0]);
+//   console.log(game.choices[index][1]);
+//   console.log(game.choices[index][2]);
+//   console.log(game.answer[index]);
+
+//   //when user onclick a btn
+//   //check the user's data against the current answer
+//   //if correct
+//   //go to the next card ()index++;
+//   //check to see if there are more cards if there are more card renderCard()
+//   //then call render card
+// }
 
 function quizTimer() {
   time = setInterval(function () {
