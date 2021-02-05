@@ -76,7 +76,7 @@ var questions = [
 ];
 
 function renderJSQuiz() {
-    var displayQuestion = document.querySelector()
+    var displayQuestion = document.querySelector("#questions-display")
     var questionButton = document.querySelector()
     var questionTitle = document.querySelector("#question-head")
 
