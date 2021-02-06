@@ -3,14 +3,17 @@ var welcomeMessage = document.querySelector("#welcomeMessge");
 var startQuiz = document.querySelector("#startQuiz");
 var timer = document.querySelector(".timer");
 var headerMain = document.querySelector("#headerMain");
-var timeLeft = 100;
+var secondsLeft = 100;
 
 startQuiz.addEventListener("click", function setTimer() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timer.textContent = "Timer Left for Quiz" + secondsLeft;
-        clearWelcome();
+        //hide whatever is in the renderWelcome fx (welcome and instruction)
 
+        // I need my questions to appear here after the user has pressed start
+        // I need my answers to be listed here for the user to choose between them
+//This is the countdown to clear
     if(secondsLeft === 0) {
         clearTimeout(timerInterval);
         sendGameover();    
@@ -20,15 +23,21 @@ startQuiz.addEventListener("click", function setTimer() {
     }
     }, 1000)
 })
-
+//Running the Welcom
+function renderWelcome(){
+    // welcome and follow instructions
+}
+//Need this message to pop up for the user to see
 function welcome() {
     welcomeMessage.textContent = "Test your Javascript Skill! Click Beging Quiz!";}
     renderWelcome()
 
+    //Title for the user to see when they start the quiz
 function headerTitle() {
     headerTitle.textContent =" Code Quiz";}
     headerTitle()
 
+    //These are the questions that will pop up for the user to go through
 var questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -68,10 +77,12 @@ var questions = [
   },
 ];
 
+//These are to make sure that the score and questions are all at a default starting space
 var quizScore = 0;
 var indexQuestion = 0;
 var currentQuestion = questions[indexQuestion];
 
+//Need this to render the JSQuiz and display the questions in the HTML
 function renderJSQuiz() {
     var displayQuestion = document.querySelector("#questions-display")
     var questionButton = document.querySelector()
@@ -88,6 +99,7 @@ function renderJSQuiz() {
         questionTitle.textContent = jsQuestions;
     }
 
+    //What happens when you answer correctly
     answerContent.forEach(function (addChoices) {
         var options = document.addEvent("button");
         options.textContent = addChoices;
@@ -114,7 +126,7 @@ function renderJSQuiz() {
     })
 
 }
-var display = document.querySelector("#questions=div");
+var display = document.querySelector("#questions-div");
 function nextQuestion(){
     currentQuestion++
     if ((questions.length - 1)==(currentQuestion)){
@@ -137,6 +149,17 @@ function scoreInput() {
     var createInputForm = document.createElement("form");
     call.textContent = "Save your High Score!"
     createInputForm.setAttribute("type", "text");
+}
+
+//#highscorebutton 
+//onclick to call the display highscore fx
+document.querySelector("#highscorebutton").onclick = function(){
+    displayHighScore()
+};
+
+
+function displayHighScore(){
+    // will display current high score board
 }
 
 // function headerTitle() {
@@ -174,3 +197,4 @@ function clearIntro() {
 //   //ask to add score
 //   //ask for username and push score into ls
 // });
+renderWelcome()
